@@ -8,7 +8,6 @@ RenderArea::RenderArea(QWidget *parent) :
     mShapeColor(255,255,255),
     mShape(Astroid)
 {
-
 }
 
 QSize RenderArea::minimumSizeHint() const
@@ -23,7 +22,7 @@ QSize RenderArea::sizeHint() const
 
 void RenderArea::paintEvent(QPaintEvent *event)
 {
-    //paint background with blue
+    Q_UNUSED(event);
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing,true);
 
@@ -39,8 +38,6 @@ void RenderArea::paintEvent(QPaintEvent *event)
         break;
     case HypoCycloid:
         mBackgroundColor=Qt::yellow;
-        break;
-    default:
         break;
     }
 
